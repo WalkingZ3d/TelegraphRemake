@@ -31,7 +31,7 @@ async function postPost(title, name, story) {
       let newPost = await getItem(id);
       const { title, name, story } = newPost;
 
-      let titleOutput = document.createElement("h1");
+      let titleOutput = document.createElement("h2");
       titleOutput.textContent = title;
       let nameOutput = document.createElement("h3");
       nameOutput.textContent = name;
@@ -55,11 +55,11 @@ async function getAll() {
     const response = await fetch(`http://localhost:3000/posts`);
     const data = await response.json();
     document.getElementById("output").innerHTMl = data.value;
-    console.log(data[0])
+    console.log(data[0]);
     for (let i = 0; i < data.length; i++) {
       const { title, name, story } = data[i];
 
-      let titleOutput = document.createElement("h1");
+      let titleOutput = document.createElement("h2");
       titleOutput.textContent = title;
       let nameOutput = document.createElement("h3");
       nameOutput.textContent = name;
@@ -70,14 +70,14 @@ async function getAll() {
       newPostDiv.appendChild(titleOutput);
       newPostDiv.appendChild(nameOutput);
       newPostDiv.appendChild(storyOutput);
-      document.getElementById("output").prepend(newPostDiv);    
+      newPostDiv.setAttribute("class", "my-5");
+      document.getElementById("output").prepend(newPostDiv);
     }
     return data;
   } catch (err) {
     console.warn(err);
   }
 }
-
 
 async function getItem(id) {
   try {
