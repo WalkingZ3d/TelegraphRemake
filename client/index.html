@@ -12,6 +12,7 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="TR.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -30,13 +31,18 @@
   </head>
 
   <body onload="getAll()">
+    <!-- Header  -->
+    <div class="container-fluid justify-content-center text-center" id="header">
+      <div><h1 class="p-4">Telegraph Remake</h1></div>
+    </div>
+
     <!-- New post section -->
-    <div class="container-fluid justify-content-center text-center my-5">
+    <div class="container-md justify-content-center text-center my-5">
       <div class="row">
-        <div class="col-sm-12">
+        <div class="col">
           <form>
             <div class="form-group">
-              <label for="titleInp">Title</label>
+              <h3>Title</h3>
               <input
                 type="text"
                 name="titleInp"
@@ -45,7 +51,7 @@
               />
             </div>
             <div class="form-group">
-              <label for="titleInp">Name</label>
+              <h3>Name</h3>
               <input
                 type="text"
                 name="nameInp"
@@ -54,15 +60,10 @@
               />
             </div>
             <div class="form-group">
-              <label for="titleInp">Story</label>
+              <h3>Story</h3>
               <textarea class="form-control" id="storyInp"></textarea>
             </div>
-            <button
-              type="submit"
-              class="btn btn-primary"
-              class="form-control"
-              id="publishButton"
-            >
+            <button type="submit" class="btn btn-lg mt-2" id="publishButton">
               Publish post
             </button>
           </form>
@@ -70,9 +71,12 @@
       </div>
     </div>
 
+    <!-- Line -->
+    <hr />
+
     <!-- Display all posts -->
     <div class="container-fluid justify-content-center text-center my-5">
-      <h2>Latest posts</h2>
+      <h1>Latest posts</h1>
       <div class="row d-flex justify-content-center">
         <div id="output"></div>
       </div>
@@ -80,40 +84,43 @@
 
     <!-- Footer section -->
     <footer>
-      <div class="container justify-content-center">
+      <div class="container justify-content-center py-4">
+        <!-- Footer Title -->
         <div class="row">
-          <div class="col-sm-12">
-            <p id="socialsHeader">GitHub Links</p>
+          <div class="col">
+            <h1 id="socialsHeader">Created by</h1>
           </div>
         </div>
-      </div>
-      <div class="container justify-content-center">
-        <div class="row">
-          <div class="col-sm-12">
-            <p>
-              <a
-                href="https://github.com/WalkingZ3d?tab=repositories"
-                target="_blank"
-                id="socialButton"
+        <!-- Footer links/buttons -->
+        <div class="row mt-2">
+          <div class="col">
+            <a
+              href="https://github.com/WalkingZ3d?tab=repositories"
+              target="_blank"
+              id="socialButton"
+            >
+              <button
+                type="button"
+                class="btn btn-social-icon btn-outline-github"
               >
-                <button
-                  type="button"
-                  class="btn btn-social-icon btn-outline-github"
-                >
-                  <i class="fa fa-github"></i></button
-              ></a>
-              <a
-                href="https://github.com/PrishalM?tab=repositories"
-                target="_blank"
-                id="socialButton"
+                <i class="fa fa-github"></i>
+              </button>
+              Dan Willis</a
+            >
+          </div>
+          <div class="col">
+            <a
+              href="https://github.com/PrishalM?tab=repositories"
+              target="_blank"
+              id="socialButton"
+            >
+              <button
+                type="button"
+                class="btn btn-social-icon btn-outline-github"
               >
-                <button
-                  type="button"
-                  class="btn btn-social-icon btn-outline-github"
-                >
-                  <i class="fa fa-github"></i></button
-              ></a>
-            </p>
+                <i class="fa fa-github"></i></button
+              >Prishal Makwana</a
+            >
           </div>
         </div>
       </div>
