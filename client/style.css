@@ -1,0 +1,98 @@
+:root {
+    --orange-color: #ff5900;
+    --header-color: #000;
+    --title-color: #21252b;
+    --body-color: #282c34;
+    --text-color: #abb2bf;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Changa&family=Orbitron&display=swap');
+
+
+footer {
+    text-align: center !important;
+    font-size: 18px !important;
+    background-color: var(--header-color);
+}
+
+strong {
+    font-size: 28px;
+    color: var(--orange-color) !important;
+}
+
+#navLinks {
+    font-family: 'Staatliches', cursive !important;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+body {
+    font-family: 'Staatliches', cursive !important;
+    background-color: var(--body-color) !important;
+    color: var(--text-color) !important;
+}
+
+#nameEnd {
+    color: var(--orange-color) !important;
+}
+
+#socialsHeader {
+    color: white !important;
+    font-size: 28px !important;
+    margin-right: 10px;
+}
+
+.flex {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+}
+
+
+
+.btn.btn-social-icon {
+    width: 50px;
+    height: 50px;
+    padding: 0
+}
+
+.btn-outline-github {
+    border: 2px solid white;
+    color: white;
+    border-radius: 25px;
+}
+
+.btn-outline-github:hover {
+    background: #181c24;
+    color: #ffffff
+}
+
+
+#socialButton {
+    margin-right: 10px;
+}
+
+#loremPara {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+#x {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+#y {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.section {
+    text-align:center;
+    font-size: 3em;
+  }
+
+  #logoId {
+    width: 55px;
+    height: 50px;
+}
