@@ -9,6 +9,18 @@ module.exports = class Post{
         this.story = data.story;
     };
 
+    static get all(){
+        return new Promise (async (resolve, reject) => {
+            try {        
+                let postData = await db.query('SELECT * FROM posts;');               
+                let posts = postData.rows.map(b => new Post(b));
+                resolve (posts);
+            } catch (err) {
+                reject('Post not found');                
+            }
+        });
+    };
+
     static findById(id){
         return new Promise (async (resolve, reject) => {
             try {
