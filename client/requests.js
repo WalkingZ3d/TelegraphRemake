@@ -24,17 +24,12 @@ async function postPost(title, name, story) {
 
     const response = await fetch("http://localhost:3000/posts", options);
     const { id, err } = await response.json();
-
     if (err) {
       throw Error(err);
     } else {
       //   window.location = `posts/${id}`;
       let newPost = await getItem(id);
       const { title, name, story } = newPost;
-      console.log(title);
-      //   document.getElementById("output1").innerHTML = title;
-      //   document.getElementById("output2").innerHTML = name;
-      //   document.getElementById("output3").innerHTML = story;
 
       let titleOutput = document.createElement("h1");
       titleOutput.textContent = title;
@@ -60,12 +55,29 @@ async function getAll() {
     const response = await fetch(`http://localhost:3000/posts`);
     const data = await response.json();
     document.getElementById("output").innerHTMl = data.value;
+    console.log(data[0])
+    for (let i = 0; i < data.length; i++) {
+      const { title, name, story } = data[i];
+
+      let titleOutput = document.createElement("h1");
+      titleOutput.textContent = title;
+      let nameOutput = document.createElement("h3");
+      nameOutput.textContent = name;
+      let storyOutput = document.createElement("p");
+      storyOutput.textContent = story;
+
+      let newPostDiv = document.createElement("div");
+      newPostDiv.appendChild(titleOutput);
+      newPostDiv.appendChild(nameOutput);
+      newPostDiv.appendChild(storyOutput);
+      document.getElementById("output").prepend(newPostDiv);    
+    }
     return data;
   } catch (err) {
     console.warn(err);
   }
 }
-// getAll();
+
 
 async function getItem(id) {
   try {
