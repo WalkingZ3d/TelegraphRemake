@@ -8,6 +8,7 @@ async function createPost(e) {
   postPost(title, name, story);
 }
 
+// Used to create new post and direct to page path
 async function postPost(title, name, story) {
   try {
     let newPost = {
@@ -27,35 +28,21 @@ async function postPost(title, name, story) {
     if (err) {
       throw Error(err);
     } else {
-      //   window.location = `posts/${id}`;
-      let newPost = await getItem(id);
-      const { title, name, story } = newPost;
-
-      let titleOutput = document.createElement("h2");
-      titleOutput.textContent = title;
-      let nameOutput = document.createElement("h3");
-      nameOutput.textContent = name;
-      let storyOutput = document.createElement("p");
-      storyOutput.textContent = story;
-
-      let newPostDiv = document.createElement("div");
-      newPostDiv.appendChild(titleOutput);
-      newPostDiv.appendChild(nameOutput);
-      newPostDiv.appendChild(storyOutput);
-      document.getElementById("output").prepend(newPostDiv);
+      // Go to new page
+      window.location = `http://localhost:8080/post.html?id=${id}`;
     }
   } catch (err) {
     console.warn(err);
   }
 }
 
-// I have broken this - fix later
+// Used to populate the index page with content from DB
 async function getAll() {
   try {
     const response = await fetch(`http://localhost:3000/posts`);
     const data = await response.json();
     document.getElementById("output").innerHTMl = data.value;
-    console.log(data[0]);
+
     for (let i = 0; i < data.length; i++) {
       const { title, name, story } = data[i];
 
@@ -79,22 +66,29 @@ async function getAll() {
   }
 }
 
-async function getItem(id) {
+async function getItem() {
+  let params = new URLSearchParams(document.location.search);
+  let id = params.get("id");
+  console.log(id);
+
   try {
     const response = await fetch(`http://localhost:3000/posts/${id}`);
     const data = await response.json();
-    return data;
+    const { title, name, story } = data;
+
+    let titleOutput = document.createElement("h2");
+    titleOutput.textContent = title;
+    let nameOutput = document.createElement("h3");
+    nameOutput.textContent = name;
+    let storyOutput = document.createElement("p");
+    storyOutput.textContent = story;
+
+    let newPostDiv = document.createElement("div");
+    newPostDiv.appendChild(titleOutput);
+    newPostDiv.appendChild(nameOutput);
+    newPostDiv.appendChild(storyOutput);
+    document.getElementById("output").prepend(newPostDiv);
   } catch (err) {
     console.warn(err);
   }
 }
-
-// async function deleteBook(id) {
-//   try {
-//     const options = { method: "DELETE" };
-//     await fetch(`http://localhost:3000/books/${id}`, options);
-//     window.location.hash = `#books`;
-//   } catch (err) {
-//     console.warn(err);
-//   }
-// }
