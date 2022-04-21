@@ -3,7 +3,7 @@
   --accent-color: #ffc107;
   --header-footer-color: #000000;
   --footer-text-color: #ffffff;
-  --body-color: #282c34;
+  --body-color: #21252b;
   --text-color: #abb2bf;
 }
 
@@ -32,16 +32,28 @@ hr {
   background-color: var(--header-footer-color);
 }
 
+#title {
+  font-size: 3.5rem;
+}
+
 /* body */
-#publishButton {
+#publishButton,
+#homeButton {
   background-color: var(--accent-color);
 }
 
 #publishButton:hover,
-#publishButton:window-inactive {
+#publishButton:active,
+#homeButton:hover,
+#homeButton:active {
   background-color: transparent;
   border: 1px solid var(--accent-color);
   color: var(--accent-color);
+}
+
+.newPostDiv {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 
 /* Index */

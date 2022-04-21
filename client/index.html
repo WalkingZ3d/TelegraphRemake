@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Telegraph Remake</title>
+    <title>TELEGRAPH REMAKE HOME</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -37,11 +37,12 @@
   <body onload="getAll()" class="d-flex flex-column min-vh-100">
     <!-- Header  -->
     <div class="container-fluid justify-content-center text-center" id="header">
-      <div><h1 class="p-4">Telegraph Remake</h1></div>
+      <div><h1 class="p-4" id="title">Telegraph Remake</h1></div>
     </div>
 
     <!-- New post section -->
     <div class="container-md justify-content-center text-center my-5">
+      <h1>Create new post</h1>
       <div class="row">
         <div class="col">
           <form>
@@ -73,7 +74,12 @@
                 placeholder="What story would you like to add to your post..."
               ></textarea>
             </div>
-            <button type="submit" class="btn btn-lg mt-2" id="publishButton">
+            <button
+              type="submit"
+              target="_blank"
+              class="btn btn-lg mt-2"
+              id="publishButton"
+            >
               Publish post
             </button>
           </form>
