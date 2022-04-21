@@ -5,7 +5,13 @@ async function createPost(e) {
   let title = document.getElementById("titleInp").value;
   let name = document.getElementById("nameInp").value;
   let story = document.getElementById("storyInp").value;
-  postPost(title, name, story);
+  if (title.length > 0 && name.length > 0 && story.length > 0) {
+    postPost(title, name, story);
+  } else {
+    alert(
+      "Title, name and story is mandatory to make a post. Please try again."
+    );
+  }
 }
 
 // Used to create new post and direct to page path
@@ -29,7 +35,7 @@ async function postPost(title, name, story) {
       throw Error(err);
     } else {
       // Go to new page
-      window.location = `http://localhost:8080/post.html?id=${id}`;
+      window.open(`http://localhost:8080/post.html?id=${id}`, "_blank");
     }
   } catch (err) {
     console.warn(err);
@@ -57,7 +63,7 @@ async function getAll() {
       newPostDiv.appendChild(titleOutput);
       newPostDiv.appendChild(nameOutput);
       newPostDiv.appendChild(storyOutput);
-      newPostDiv.setAttribute("class", "my-5");
+      newPostDiv.setAttribute("class", "newPostDiv");
       document.getElementById("output").prepend(newPostDiv);
     }
     return data;
@@ -69,8 +75,6 @@ async function getAll() {
 async function getItem() {
   let params = new URLSearchParams(document.location.search);
   let id = params.get("id");
-  console.log(id);
-
   try {
     const response = await fetch(`http://localhost:3000/posts/${id}`);
     const data = await response.json();
