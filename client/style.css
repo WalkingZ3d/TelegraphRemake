@@ -1,16 +1,14 @@
 /* Generic */
 :root {
-  --orange-color: #ff5900;
-  --header-color: #000;
-  --title-color: #21252b;
+  --accent-color: #ffc107;
+  --header-footer-color: #000000;
+  --footer-text-color: #ffffff;
   --body-color: #282c34;
   --text-color: #abb2bf;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Changa&family=Orbitron&display=swap");
-
 h1 {
-  color: #ffc107;
+  color: var(--accent-color);
 }
 
 .section {
@@ -19,10 +17,11 @@ h1 {
 }
 
 body {
-  font-family: "Staatliches", cursive !important;
-  background-color: var(--body-color) !important;
-  color: var(--text-color) !important;
+  font-family: "Staatliches", cursive;
+  background-color: var(--body-color);
+  color: var(--text-color);
 }
+
 hr {
   background-color: var(--text-color);
   width: 85%;
@@ -30,25 +29,38 @@ hr {
 
 /* Header */
 #header {
-  background-color: var(--header-color);
+  background-color: var(--header-footer-color);
 }
 
 /* body */
 #publishButton {
-  background-color: #ffc107;
+  background-color: var(--accent-color);
+}
+
+#publishButton:hover,
+#publishButton:window-inactive {
+  background-color: transparent;
+  border: 1px solid var(--accent-color);
+  color: var(--accent-color);
+}
+
+/* Index */
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-color) !important;
 }
 
 /* Footer */
 footer {
-  text-align: center !important;
-  font-size: 18px !important;
-  background-color: var(--header-color);
+  text-align: center;
+  background-color: var(--header-footer-color);
 }
 
 .btn-outline-github {
   background: #181c24;
-  border: 2px solid #ffffff;
-  color: #ffffff;
+  border: 2px solid var(--footer-text-color);
+  color: var(--footer-text-color);
   font-size: 2rem;
   border-radius: 25px;
   width: 50px;
@@ -58,18 +70,18 @@ footer {
 }
 
 .btn-outline-github:hover {
-  background: #ffffff;
+  background: var(--footer-text-color);
   border: 2px solid #181c24;
   color: #181c24;
 }
 
 #socialButton {
   margin-right: 10px;
-  color: #ffffff;
+  color: var(--footer-text-color);
   text-decoration: none;
 }
 
 #socialButton:hover {
-  color: #ffffff;
+  color: var(--footer-text-color);
   text-decoration: underline;
 }

@@ -34,50 +34,17 @@
     <script src="requests.js" defer></script>
   </head>
 
-  <body onload="getAll()" class="d-flex flex-column min-vh-100">
+  <body onload="getItem()" class="d-flex flex-column min-vh-100">
     <!-- Header  -->
     <div class="container-fluid justify-content-center text-center" id="header">
       <div><h1 class="p-4">Telegraph Remake</h1></div>
     </div>
 
-    <!-- New post section -->
-    <div class="container-md justify-content-center text-center my-5">
-      <div class="row">
-        <div class="col">
-          <form>
-            <div class="form-group">
-              <h3>Title</h3>
-              <input
-                type="text"
-                name="titleInp"
-                class="form-control"
-                id="titleInp"
-                placeholder="Give your post a title"
-              />
-            </div>
-            <div class="form-group">
-              <h3>Name</h3>
-              <input
-                type="text"
-                name="nameInp"
-                class="form-control"
-                id="nameInp"
-                placeholder="Set a name for your post"
-              />
-            </div>
-            <div class="form-group">
-              <h3>Story</h3>
-              <textarea
-                class="form-control"
-                id="storyInp"
-                placeholder="What story would you like to add to your post..."
-              ></textarea>
-            </div>
-            <button type="submit" class="btn btn-lg mt-2" id="publishButton">
-              Publish post
-            </button>
-          </form>
-        </div>
+    <!-- Display post -->
+    <div class="container-fluid justify-content-center text-center my-5">
+      <h1>Your post</h1>
+      <div class="row d-flex justify-content-center">
+        <div id="output"></div>
       </div>
     </div>
 
@@ -86,9 +53,11 @@
 
     <!-- Display all posts -->
     <div class="container-fluid justify-content-center text-center my-5">
-      <h1>Latest posts</h1>
+      <h1>Other posts</h1>
       <div class="row d-flex justify-content-center">
-        <div id="output"></div>
+        <button type="submit" class="btn btn-lg mt-2" id="publishButton">
+          View latest posts
+        </button>
       </div>
     </div>
 
