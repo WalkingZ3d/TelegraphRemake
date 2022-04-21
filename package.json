@@ -1,0 +1,22 @@
+{
+  "name": "telegraphremake",
+  "version": "1.0.0",
+  "description": "# Dan Willis & Prishal Makwana",
+  "main": "index.js",
+  "scripts": {
+    "start": "node api/index.js",
+    "dev": "nodemon api/index.js",
+    "seedDev": "node api/dbConfig/seedDev.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WalkingZ3d/TelegraphRemake.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WalkingZ3d/TelegraphRemake/issues"
+  },
+  "homepage": "https://github.com/WalkingZ3d/TelegraphRemake#readme"
+}
